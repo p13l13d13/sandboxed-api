@@ -43,6 +43,7 @@
 #include "sandboxed_api/sandbox2/util.h"
 #include "sandboxed_api/util/fileops.h"
 
+#ifndef RESOLVE_NO_SYMLINKS
 namespace {
 
 struct open_how {
@@ -51,9 +52,8 @@ struct open_how {
   uint64_t resolve;
 };
 
-}  // anomymous namespace
+}  // namespace
 
-#ifndef RESOLVE_NO_SYMLINKS
 #define RESOLVE_NO_SYMLINKS 0x04
 #endif
 
